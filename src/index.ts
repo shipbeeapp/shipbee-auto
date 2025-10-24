@@ -1,10 +1,12 @@
 import "reflect-metadata";
 import App from "./app";
 import { UploadController } from "./controllers/upload.controller";
+import { VehicleController } from "./controllers/vehicle.controller";
 
 const app = new App(
     [
         new UploadController(),
+        new VehicleController(),  // Make sure to import VehicleController at the top
     ],
 );
 

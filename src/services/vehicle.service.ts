@@ -26,4 +26,8 @@ export default class VehicleService {
     public async saveVehicle(vehicle: Vehicle): Promise<Vehicle> {
         return await this.vehicleRepository.save(vehicle);
     }
+
+    public async getAllVehicles(): Promise<Vehicle[]> {
+        return await this.vehicleRepository.find({ relations: ["user", "listings"] });
+    }
 }
