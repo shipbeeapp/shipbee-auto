@@ -20,8 +20,7 @@ export class AddSparePartsModel1761320586689 implements MigrationInterface {
                 "quantity" integer,
                 "leadTime" text,
                 "partNumber" text,
-                "images" text,
-                CONSTRAINT "PK_spare_parts_id" PRIMARY KEY ("id"),
+                "images" text
             )
         `);
     }
