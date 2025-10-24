@@ -5,6 +5,8 @@ import { InitialMigration1759397078556 } from "../migrations/1759397078556-Initi
 import { User } from "../models/user.model";
 import { Vehicle } from "../models/vehicle.model";
 import { Listing } from "../models/listing.model";
+import { SpareParts } from "../models/spareParts.model";
+import {AddSparePartsModel1761320586689} from "../migrations/1761320586689-AddSparePartsModel";
 
 export const AppDataSource = new DataSource({
   type: "postgres",
@@ -18,9 +20,11 @@ export const AppDataSource = new DataSource({
     User,
     Vehicle,
     Listing,
+    SpareParts,
   ],
   migrations: [
-    InitialMigration1759397078556
+    InitialMigration1759397078556,
+    AddSparePartsModel1761320586689,
   ], // ✅ Path to migrations
   ssl: false,
   synchronize: false, // Always false in production!

@@ -2,6 +2,7 @@ import { Entity, Column, OneToMany } from "typeorm";
 import { Vehicle } from "./vehicle.model";
 import BaseEntity from "./baseEntity";
 import { UserType } from "../utils/enums/userType.enum";
+import { SpareParts } from "./spareParts.model";
 
 
 @Entity('users')
@@ -24,4 +25,7 @@ export class User extends BaseEntity {
 
   @OneToMany(() => Vehicle, vehicle => vehicle.user)
   vehicles: Vehicle[];
+
+  @OneToMany(() => SpareParts, spareParts => spareParts.user)
+  spareParts: SpareParts[];
 }

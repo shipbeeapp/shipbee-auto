@@ -2,6 +2,7 @@ import { Entity, Column, ManyToOne, JoinColumn } from "typeorm";
 import { Vehicle } from "./vehicle.model";
 import { ListingType, RentalPeriod } from "../utils/enums/listing.enum";
 import BaseEntity from "./baseEntity";
+import { SpareParts } from "./spareParts.model";
 
 @Entity("listings")
 export class Listing extends BaseEntity {
@@ -9,6 +10,10 @@ export class Listing extends BaseEntity {
   @ManyToOne(() => Vehicle, vehicle => vehicle.listings, { onDelete: "CASCADE" })
   @JoinColumn({ name: "vehicleId" })
   vehicle: Vehicle;
+
+  @ManyToOne(() => SpareParts, sparePart => sparePart.listings, { onDelete: "CASCADE" })
+  @JoinColumn({ name: "sparePartId" })
+  sparePart: SpareParts;
 
   @Column({ type: "enum", enum: ListingType, nullable: false })
   listingType: ListingType;
