@@ -7,11 +7,11 @@ import { SpareParts } from "./spareParts.model";
 @Entity("listings")
 export class Listing extends BaseEntity {
 
-  @ManyToOne(() => Vehicle, vehicle => vehicle.listings, { onDelete: "CASCADE" })
+  @ManyToOne(() => Vehicle, vehicle => vehicle.listings, { nullable: true, onDelete: "CASCADE" })
   @JoinColumn({ name: "vehicleId" })
   vehicle: Vehicle;
 
-  @ManyToOne(() => SpareParts, sparePart => sparePart.listings, { onDelete: "CASCADE" })
+  @ManyToOne(() => SpareParts, sparePart => sparePart.listings, {nullable: true, onDelete: "CASCADE" })
   @JoinColumn({ name: "sparePartId" })
   sparePart: SpareParts;
 
