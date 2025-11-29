@@ -75,7 +75,7 @@ export class Vehicle extends BaseEntity {
   chassisNumber: string;
 
   @Column({type: "int", nullable: true })
-  cylinders: number;
+  numberOfCylinders: number;
 
   @Column({type: "int", nullable: true })
   numberOfSeats: number; //excluding driver

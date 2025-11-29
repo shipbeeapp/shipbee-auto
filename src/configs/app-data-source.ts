@@ -10,6 +10,7 @@ import {AddSparePartsModel1761320586689} from "../migrations/1761320586689-AddSp
 import {MakeVehicleAndSparePartIdNullableInListing1761323697543} from "../migrations/1761323697543-MakeVehicleAndSparePartIdNullableInListing";
 import {AddMoreVehicleAndUserFields1764423643201} from "../migrations/1764423643201-AddMoreVehicleAndUserFields";
 import {AddYearlyToRentalPeriodEnum1764424848295} from "../migrations/1764424848295-AddYearlyToRentalPeriodEnum";
+import {RenameCylinderColumn1764425859013} from "../migrations/1764425859013-RenameCylinderColumn";
 
 export const AppDataSource = new DataSource({
   type: "postgres",
@@ -31,6 +32,7 @@ export const AppDataSource = new DataSource({
     MakeVehicleAndSparePartIdNullableInListing1761323697543,
     AddMoreVehicleAndUserFields1764423643201,
     AddYearlyToRentalPeriodEnum1764424848295,
+    RenameCylinderColumn1764425859013,
   ], // ✅ Path to migrations
   ssl: false,
   synchronize: false, // Always false in production!
