@@ -6,5 +6,6 @@ export enum ListingType {
 export enum RentalPeriod {
   DAILY = "daily",
   WEEKLY = "weekly",
-  MONTHLY = "monthly"
+  MONTHLY = "monthly",
+  YEARLY = "yearly"
 }
