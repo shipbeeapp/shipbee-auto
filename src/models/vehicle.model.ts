@@ -56,6 +56,48 @@ export class Vehicle extends BaseEntity {
   @Column({type: "text", nullable: true })
   images: string; // comma-separated URLs
 
+  @Column({type: "boolean", nullable: true })
+  withDriver: boolean;
+
+  @Column({type: "int", nullable: true })
+  maxMileagePerMonth: number;
+
+  @Column({type: "text", nullable: true })
+  vehicleType: string;
+
+  @Column({type: "text", nullable: true })
+  vehicleCategory: string;
+
+  @Column({type: "text", nullable: true })
+  countryOfOrigin: string;
+
+  @Column({type: "text", nullable: true })
+  chassisNumber: string;
+
+  @Column({type: "int", nullable: true })
+  cylinders: number;
+
+  @Column({type: "int", nullable: true })
+  numberOfSeats: number; //excluding driver
+
+  @Column({type: "int", nullable: true })
+  maxLoadCapacity: number; // in kgs
+
+  @Column({type: "text", nullable: true })
+  insuranceCompany: string;
+
+  @Column({type: "text", nullable: true })
+  insuranceType: string;
+
+  @Column({type: "date", nullable: true })
+  insuranceExpiryDate: Date;
+
+  @Column({type: "date", nullable: true })
+  registrationExpiryDate: Date;
+
+  @Column({type: "text", nullable: true })
+  environment: string;
+
   @OneToMany(() => Listing, listing => listing.vehicle)
   listings: Listing[];
 }

@@ -11,6 +11,9 @@ export class User extends BaseEntity {
   @Column({type: "text", nullable: false})
   name: string; // can be a person or company name
 
+  @Column({type: "text", nullable: true })
+  companyCoordinatorName: string;
+
   @Column({type: "text", unique: true })
   email: string;
 
